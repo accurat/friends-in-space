@@ -1,0 +1,35 @@
+<template name="fisControlRoomOrbits">
+    <div class="orbits-container">
+        <div class="title">
+            <span class="text">Your Orbits</span>
+            <span id="orbit-list-all" class="fis-button all {{getSelected 'fis-orbit-list-type-all'}}">VIEW ALL</span>
+            <span id="orbit-list-on-orbit" class="fis-button on-orbit {{getSelected 'fis-orbit-list-type-on-orbit'}}">ON ORBIT</span>
+            <span id="orbit-list-in-space" class="fis-button in-space {{getSelected 'fis-orbit-list-type-in-space'}}">IN SPACE</span>
+        </div>
+        <div id="control-room-orbit-list" class="orbit-list">
+            <div class="list">
+                {{#each userOrbits}}
+                    {{> fisOrbitChart}}
+                {{/each}}
+                {{#if moreOrbits}}
+                    <div class="progress">..loading more orbits...</div>
+                {{/if}}
+                {{#if notExistOrbits }}
+                    <div class="progress">You've never been {{zeroOrbitType}}</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="fisOrbitChart">
+    <div class="orbit {{selected}}">
+        <div class="chart">
+            <div class="map"></div>
+        </div>
+        <div class="title">
+            <span class="{{onOrbitClass}}">ORBIT {{orbitId}}</span><span class="date"> - {{orbitDate}}</span>
+        </div>
+        <div class="share-button"><a class="link">SHARE</a></div>
+    </div>
+</template>

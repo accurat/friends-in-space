@@ -1,0 +1,21 @@
+<template name="fisBackgroundVideo">
+
+    {{#if videoStatus}}
+        <object width="0" height="0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+            <param name="flashvars" value="cid=9408562&autoplay=true&quality=low"/>
+            <param name="allowfullscreen" value="false"/>
+            <param name="allowscriptaccess" value="false"/>
+            <param name="src" value="http://www.ustream.tv/flash/viewer.swf"/>
+            <embed flashvars="cid=9408562&;autoplay=true&quality=low" width="0" height="0" allowfullscreen="false" allowscriptaccess="false"
+                   src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash"/>
+        </object>
+        <iframe id="fis-iss-video-stream" src="//www.ustream.tv/embed/17074538?v=3&wmode=opaque&autoplay=true&controls=false&showtitle=false&volume=0&quality=medium" frameborder="0"></iframe>
+        <div class="ustream-icon">
+            <img src="assets/images/ustream-live-icon.svg" alt=""/>
+        </div>
+    {{else}}
+        <div class="fis-demo-background"></div>
+    {{/if}}
+
+    <div class="fis-iss-video-overlay"></div>
+</template>

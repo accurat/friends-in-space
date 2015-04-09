@@ -1,0 +1,74 @@
+<template name="fisPast">
+
+
+    <div id="tracker-past" class="tracker-container view-past">
+        <div class="map"></div>
+        <div class="time-labels"></div>
+        <div class="current-orbit-time"><span class="current-view"></span> &#8213; <span class="current-time"></span> UTC</div>
+        <div class="controls">
+            <div class="fis-button zoom-in">+</div>
+            <div class="fis-button zoom-out">-</div>
+        </div>
+        <div class="help">&#8595; scroll down to explore past orbits</div>
+        <!--<div class="attribution">© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>  contributors © <a href="http://cartodb.com/attributions#basemaps" target="_blank">CartoDB</a>, CartoDB <a href="http://cartodb.com/attributions" target="_blank">attribution</a></div>-->
+        <div class="right-content">
+            <div class="commands">
+                <span id="show-past-activities" class="fis-button {{pastActivitiesSelected}}">PAST ACTIVITIES</span><span id="show-sam-feed" class="fis-button {{feedSelected}}">SAM'S FEED</span>
+            </div>
+
+            {{#if pastActivities}}
+                <div class="content">
+                    <div class="title">New features will be unlocked soon! Here you will soon see what happens on the ISS!</div>
+                </div>
+            {{else}}
+
+                {{> fisSamFeed}}
+
+            {{/if}}
+        </div>
+    </div>
+
+
+</template>
+
+<template name="fisSamFeed">
+    <div class="content">
+        <div class="title">Samantha's Twitter Timeline</div>
+        <div class="feed" id="fis-feed-list">
+            <div class="list">
+                {{#each samFeed}}
+                    {{> fisSamFeedContent}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="fisSamFeedContent">
+
+    <div class="feed-content">
+        <div class="header">
+            <a href="https://www.twitter.com/{{user.screen_name}}" target="_blank" class="twitter-image" style="background-image: url({{user.profile_image_url}})"></a>
+
+            <div class="twitter-handler"><a href="https://www.twitter.com/{{user.screen_name}}" target="_blank">@{{user.screen_name}}</a></div>
+            <div class="twitter-name"><a href="https://www.twitter.com/{{user.screen_name}}" target="_blank">{{user.name}}</a></div>
+            <div class="twitter-time"><a href="{{permalink}}" target="_blank">{{formatFeedTime created_at}}</a></div>
+        </div>
+        {{#if hasImage}}
+            <div class="feed-image">
+                <div class="picture" style="background-image: url({{getSingleImage}})"></div>
+            </div>
+        {{/if}}
+        <div class="feed-text">
+            <p>{{twitterText text}}</p>
+        </div>
+        <div class="actions">
+            <a href="https://twitter.com/intent/tweet?in-reply-to={{id_str}}&text=@{{user.screen_name}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reply"></i>Reply</a> <a href="https://twitter.com/intent/retweet?tweet_id={{id_str}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-retweet"></i>Retweet</a> <a href="https://twitter.com/intent/favorite?tweet_id={{id_str}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-star"></i>Favourite</a>
+        </div>
+
+    </div>
+
+</template>

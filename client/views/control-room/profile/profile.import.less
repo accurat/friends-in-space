@@ -1,0 +1,124 @@
+@import "../../../stylesheets/variables.import.less";
+
+.profile {
+  position: absolute;
+  top: 0;
+  bottom:0;
+  left: 0;
+  width: 20%;
+  .title{
+    position:absolute;
+    top:0;
+    left:15px;
+    color:white;
+    font-size:15px;
+  }
+  .map{
+    position:absolute;
+    top:80px;
+    bottom:0;
+    right:0;
+    left:0;
+  }
+  .map-top-gradient{
+    position: absolute;
+    top: 80px;
+    height: 90px;
+    right: 0;
+    left: 0;
+    background: rgba(20,20,20,1);
+    background: -moz-linear-gradient(top, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(20,20,20,1)), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(top, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141414', endColorstr='#ffffff', GradientType=0 );
+  }
+  .map-right-gradient{
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    right: 0px;
+    width: 100%;
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(20,20,20,1)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#141414', GradientType=1 );
+  }
+  .map-center{
+    position:absolute;
+    top:80px;
+    bottom:0;
+    right:0;
+    left:0;
+    background-image: url(assets/icons/my-location.svg);
+    width:20px;
+    height:20px;
+    background-repeat: no-repeat;
+    margin:auto auto;
+
+  }
+  .user{
+    position:absolute;
+    top:40px;
+    left:15px;
+    //copied from home-user-profile
+    .user-profile {
+      width: 80px;
+      height: 80px;
+      border: 2px solid transparent;
+      border-radius: 45px;
+      padding:2px;
+      margin-bottom: 12px;
+
+      .transition-attr(border,500ms,ease-out);
+
+      &:hover {
+        cursor: pointer;
+      }
+      &.user-image {
+        background-clip: content-box;
+        background-size: 82px;
+        background-repeat: no-repeat;
+      }
+      &.on-orbit {
+        border-color: @color-yellow;
+        color: @color-yellow;
+      }
+      &.highlight-star {
+        border-color: white;
+      }
+    }
+    .user-name{
+      color:white;
+      font-size:15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .user-location{
+      color:white;
+      font-size:15px;
+    }
+  }
+  .stats{
+    position:absolute;
+    bottom:18px;
+    left:15px;
+    font-size:10px;
+    font-family: Akkurat, monospace;
+    text-transform: uppercase;
+    .orbit{
+      color:@color-yellow;
+      margin-bottom: 10px;
+    }
+    .friends{
+      color:@color-activities-1;
+    }
+  }
+
+}

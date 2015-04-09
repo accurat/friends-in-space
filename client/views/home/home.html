@@ -1,0 +1,79 @@
+<template name="fisHome">
+
+
+    <div class="home-container">
+        {{#if showHome}}
+            {{> fisOnlineMap }}
+            {{> fisOrbitStatus }}
+            {{> fisUserProfile }}
+            {{> fisSamProfile }}
+            {{> fisGreetingControls }}
+            {{> fisSamDistance}}
+            {{> fisLegend }}
+
+        {{/if}}
+
+    </div>
+
+
+    <div class="view-container top">
+        <div class="bar-title"><span id="fis-explore-future">Explore the FUTURE &uarr;</span></div>
+
+        {{#if showFuture}}
+            {{> fisFuture}}
+        {{/if}}
+
+    </div>
+
+
+    <div class="now-bar top">
+        <span id="fis-online-map-now-top">NOW &uarr;</span>
+    </div>
+    <div class="now-bar bottom">
+        <span id="fis-online-map-now-bottom">NOW &darr;</span>
+    </div>
+
+
+    <div class="view-container bottom">
+        <div class="bar-title"><span id="fis-explore-past">Explore the PAST &darr;</span>
+        <div class="share-actions">
+            <a class="accurat" title="Accurat" href="http://www.accurat.it" target="_blank">made with <i class="fa fa-heart"></i> by Accurat</a>
+            <a title="Share on Facebook" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://www.facebook.com/sharer/sharer.php?app_id=1514559322131714&u=http%3A%2F%2Fwww.friendsinspace.org%2F&display=popup&ref=plugin"><i class="fa fa-facebook"></i></a>
+            <a title="Share on Twitter" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://twitter.com/share?text=Make friends with an astronaut! Say hello on&url=http://www.friendsinspace.org&via=Friends_inSpace&hashtags=futura42&"><i class="fa fa-twitter"></i></a>
+            <a title="Share on Google Plus" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" href="https://plus.google.com/share?url=http://www.friendsinspace.org"><i class="fa fa-google-plus"></i></a>
+        </div>
+        </div>
+
+        {{#if showPast}}
+            {{> fisPast}}
+        {{/if}}
+        {{#if showControlRoom}}
+            {{> fisControlRoom}}
+        {{/if}}
+
+    </div>
+
+
+    <div class="fis-logo">
+        <img src="assets/images/logo.svg">
+        <div class="fis-disclaimer" id="show-fis-disclaimer">What is this?</div>
+    </div>
+
+    <div class="fis-background-controls">
+        {{#if videoStatus}}
+            <span class="fis-button" id="toggle-video" title="Turn OFF the ISS video Stream">HIDE VIDEO</span>
+        {{else}}
+            <span class="fis-button" id="toggle-video" title="Turn ON the ISS video Stream">SHOW LIVE VIDEO</span>
+        {{/if}}
+        {{#if showHome}}
+            <span class="fis-button"><a href="http://www.friendsinspace.org/about.html" target="_blank">ABOUT THE PROJECT</a></span>
+        {{else}}
+            <span id="back" class="fis-button">BACK</span>
+        {{/if}}
+    </div>
+
+
+</template>

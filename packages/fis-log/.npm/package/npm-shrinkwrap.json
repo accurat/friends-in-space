@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "color-console": {
+      "version": "0.0.1"
+    },
+    "sprintf-js": {
+      "version": "0.0.7"
+    }
+  }
+}

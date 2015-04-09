@@ -1,0 +1,32 @@
+<template name="fisSamDistance">
+
+    <div class="fis-sam-distance">
+
+
+
+        {{#if onOrbit }}
+            {{> fisSamNotification}}
+            <div class="path-dash"></div>
+            <div class="current-path" style="width:{{orbitPercent}}"></div>
+            <div class="sam-position" style="left:{{orbitPercent}}"></div>
+            <div class="your-position" style="left:{{yourPosition}}"></div>
+        {{else}}
+            {{#if hasNotification }}
+                <div class="notification-text"><p class="marquee"><span>{{notificationText}}</span></p></div>
+            {{/if}}
+        {{/if}}
+    </div>
+
+</template>
+
+
+<template name="fisSamNotification">
+
+    {{#if hasNotification}}
+        <div class="notification-text"><p class="marquee"><span>{{notificationText}}</span></p></div>
+    {{else}}
+        <div class="remaining-text">{{samText}}</div>
+    {{/if}}
+
+
+</template>

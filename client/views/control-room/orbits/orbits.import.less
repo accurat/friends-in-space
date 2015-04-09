@@ -1,0 +1,109 @@
+.orbits-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 48%;
+
+  .title {
+    .text {
+      color: white;
+      font-size: 15px;
+      padding-right: 16px;
+    }
+    .fis-button {
+      margin-right: 11px;
+      border-color: @color-light-gray;
+    }
+    .selected, .fis-button:hover {
+      &.all {
+        border-color: transparent !important;
+        background-color: @color-light-gray;
+        color: black;
+      }
+      &.on-orbit {
+        border-color: @color-yellow;
+        background-color: @color-yellow;
+        color: black;
+      }
+      &.in-space {
+        border-color: @color-activities-1;
+        background-color: @color-activities-1;
+        color: black;
+      }
+    }
+  }
+
+  .orbit-list {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    overflow:hidden;
+    .list{
+      padding-bottom: 50px;
+      padding-right: 15px;
+      .progress{
+        width:98%;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color:white;
+        font-family: Akkurat, monospace;
+        font-size:12px;
+      }
+    }
+    .orbit {
+      position: relative;
+      border: 1px solid @color-dark-gray;
+      width: 98%;
+      margin-bottom: 20px;
+      .transition-attr(border-color,0.2s, ease-in);
+      &:hover{
+        cursor:pointer;
+        .transition-attr(border-color,0.2s, ease-out);
+        border-color:@color-light-gray;
+      }
+      &.selected {
+        .transition-attr(border-color,0.2s, ease-out);
+        border: 1px solid @color-light-gray;
+        border-top: 2px solid @color-light-gray;
+      }
+      .chart {
+        width: 100%;
+        overflow: hidden;
+        .map {
+          width: 470px;
+          height: 240px;
+          background: black;
+        }
+      }
+      .title {
+        position: absolute;
+        top: 0;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-size: 13px;
+        color: white;
+        .on-orbit {
+          color: @color-yellow;
+        }
+        .date {
+          color: @color-light-gray;
+        }
+      }
+      .share-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: white;
+        color: black;
+        font-family: Akkurat, monospace;
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+    }
+  }
+
+}

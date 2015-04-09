@@ -1,0 +1,46 @@
+<template name="fisUserProfile">
+    <div class="fis-user-profile">
+
+        {{#if isUser }}
+            <div class="user-profile user-image {{ onOrbit }}" style="background-image:{{ userProfileImage }}">
+            </div>
+        {{else}}
+            <div class="user-profile guest-image {{ onOrbit }} guest-star {{ guestClusterIcon }} ">
+                <div class="guest-circle"></div>
+            </div>
+        {{/if}}
+        <div class="user-data">
+            {{#if onOrbit }}
+                <div class="on-orbit-description">YOU ARE PART OF THE CURRENT ORBIT!</div>
+            {{else}}
+                <div class="on-orbit-description">NOT PART OF CURRENT ORBIT <span class="help"><a href="http://www.friendsinspace.org/about.html" target="_blank">?</a></span></div>
+            {{/if}}
+
+            {{#if userLocationDetected}}
+                <div class="profile">
+                    <a class="name" href="{{ userProfileLink }}" target="_blank">{{ userName }}</a>
+                    <span class="location"> &#9472; {{ userLocation }}</span>
+                </div>
+            {{else}}
+                <div class="profile">
+                    <div id="request-user-location" class="location not-detected">{{userLocationNotDetected}}</div>
+                </div>
+            {{/if}}
+
+            {{#if currentUser  }}
+                <div class="profile-buttons">
+                    <span class="fis-button" id="go-to-control-room" title="Go to your Control Room">YOUR CONTROL ROOM</span>
+                    <span class="fis-button" id="logout" title="Logout">LOGOUT</span>
+                </div>
+
+            {{else}}
+                <div class="profile-buttons">
+                    <span class="fis-button" id="request-login" title="Login">LOG IN TO ACCESS YOUR CONTROL ROOM</span>
+                </div>
+
+            {{/if}}
+        </div>
+
+
+    </div>
+</template>

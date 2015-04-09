@@ -1,0 +1,68 @@
+@import "variables.import.less";
+
+.fis-sam-profile {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+
+  .sam-profile {
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 45px;
+    padding:2px;
+
+    background-clip: content-box;
+    background-image: url(https://pbs.twimg.com/profile_images/507866792685862912/sLZiCB6w_400x400.jpeg);
+    background-size: 82px;
+    background-repeat: no-repeat;
+
+    .transition-attr(border,500ms,ease-out);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.highlight-star {
+      border-color: white;
+    }
+  }
+  .sam-data {
+    position: absolute;
+    right: 100px;
+    top:20px;
+    width: 300px;
+
+    .profile {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: right;
+      .name {
+        text-decoration: none;
+        font-size: 15px;
+        color: white;
+        font-weight: bold;
+      }
+      .location {
+        font-size: 15px;
+        font-weight: normal;
+        color: white;
+      }
+    }
+  }
+  .sam-actions{
+    position: absolute;
+    top: 52px;
+    right: 100px;
+    width: 250px;
+    line-height: 13px;
+    text-align: right;
+    .fis-button{
+      display: inline-block;
+      margin-left:12px;
+    }
+  }
+
+}

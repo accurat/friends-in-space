@@ -1,0 +1,49 @@
+@import "variables.import.less";
+
+a.btn{
+  text-decoration: none;
+  color: @color-light-gray;
+}
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid @color-light-gray;
+  &:hover  {
+    border-color: lighten(@color-light-gray, 30%);
+    color: lighten(@color-light-gray, 30%);
+  }
+
+}
+
+.btn-large {
+  margin: 10px;
+  padding: 20px;
+  font-size: 24px;
+}
+
+
+
+.fis-button{
+  color: @color-light-gray;
+
+  font-size:11px;
+  font-family: Akkurat, monospace;
+  border:1px solid @color-light-gray;
+  padding:6px 10px 6px 10px;
+  white-space: nowrap;
+  .transition(0.2s, ease-out);
+  a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:hover  {
+    cursor: pointer;
+    .transition(0.2s, ease-in);
+    color: @color-lighter-gray;
+    border-color:@color-lighter-gray;
+    i{
+      .transition(0.2s, ease-in);
+      color: @color-lighter-gray;
+    }
+  }
+}

@@ -1,0 +1,278 @@
+.tracker-container {
+  &.view-past {
+    .help {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 300px;
+      width: 200px;
+      text-align: center;
+      margin: 0 auto;
+      background-color: rgba(26, 26, 26, 0.7);
+      font-size: 11px;
+      color: rgba(128, 128, 128, 0.7);
+      padding: 10px 5px;
+
+    }
+    .attribution{
+      position: absolute;
+      bottom: 0px;
+      right: 300px;
+      background-color: rgba(26, 26, 26, 0.7);
+      font-size: 11px;
+      padding:2px;
+      color: rgba(128, 128, 128, 0.7);
+      a{
+        color: rgba(128, 128, 128, 0.7);
+      }
+    }
+  }
+  &.view-future {
+    .map {
+      right: 0;
+    }
+    .controls {
+      right: 15px;
+    }
+    .attribution{
+      position: absolute;
+      bottom: 10px;
+      right: 0px;
+      background-color: rgba(26, 26, 26, 0.7);
+      font-size: 11px;
+      padding:2px;
+      color: rgba(128, 128, 128, 0.7);
+      a{
+        color: rgba(128, 128, 128, 0.7);
+      }
+    }
+    .help {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      width: 180px;
+      text-align: center;
+      margin: 0 auto;
+      background-color: rgba(26, 26, 26, 0.7);
+      font-size: 11px;
+      color: rgba(128, 128, 128, 0.7);
+      padding: 10px 5px;
+
+    }
+  }
+
+  .ol-rotate {
+    position: absolute;
+    top: 700px;
+    right: 15px;
+    color: @color-light-gray;
+    border: 1px solid @color-light-gray;
+    width: 28px;
+    height: 28px;
+    border-radius: 20px;
+    .ol-compass {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      background-image: url(assets/icons/icons/icon-compass.svg);
+      background-size: 22px 22px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+  /* map */
+  .map {
+    position: absolute;
+    left:0;
+    right: 300px;
+
+  }
+  .right-content{
+    position: absolute;
+    width: 300px;
+    right:0;
+    top:0;
+    bottom:0;
+    .commands{
+      position: absolute;
+      left:15px;
+      top:15px;
+      .fis-button{
+        margin-right:10px;
+        &.selected{
+          color:white;
+          border-color:white;
+        }
+      }
+    }
+    .content{
+      position: absolute;
+      left:15px;
+      top:60px;
+      bottom:0;
+      right:0;
+      .title{
+        font-size: 13px;
+        line-height: 17px;
+
+      }
+      .feed{
+
+        position:absolute;
+        top:50px;
+        bottom:0;
+        left:0;
+        right:0;
+        overflow: hidden;
+        .list{
+          padding-right:15px;
+        }
+        .feed-content{
+          position:relative;
+          color:white;
+          padding-bottom:25px;
+          padding-top:10px;
+          padding-left:5px;
+          padding-right:5px;
+          border-bottom:1px solid @color-light-gray;
+          .transition-attr(background-color,0.2s,ease-in);
+          &:hover{
+            background-color:@color-dark-gray;
+            .transition-attr(background-color,0.2s,ease-out);
+            .actions{
+              opacity: 1;
+              .transition-attr(opacity,0.2s,ease-out);
+            }
+          }
+          .header{
+            position:relative;
+            .twitter-image{
+              display:block;
+              width:30px;
+              height:30px;
+              border-radius: 20px;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+            .twitter-handler{
+              position:absolute;
+              top:0;
+              left:40px;
+              font-size:13px;
+              a{
+                color:white;
+                text-decoration: none;
+              }
+            }
+            .twitter-name{
+              position:absolute;
+              top:21px;
+              left:40px;
+              font-size:11px;
+              font-weight: 200;
+              a{
+                color:@color-light-gray;
+                text-decoration: none;
+              }
+
+            }
+            .twitter-time{
+              position:absolute;
+              top:0;
+              right:10px;
+              font-size:11px;
+              font-family: Akkurat;
+              font-weight: 200;
+              a{
+                color:white;
+                text-decoration: none;
+              }
+            }
+          }
+          .feed-image {
+            position: relative;
+            margin-top:15px;
+            height:200px;
+            width:100%;
+            .picture{
+              background-repeat: no-repeat;
+              background-size: cover;
+              height:100%;
+              width:100%;
+            }
+          }
+          .feed-text{
+            position:relative;
+            margin-top:15px;
+            font-size:15px;
+            line-height: 22px;
+            color:@color-light-gray;
+            a{
+              color:white;
+            }
+          }
+
+          .actions{
+            opacity: 0;
+            padding-top: 10px;
+            .transition-attr(opacity,0.2s,ease-in);
+
+            a{
+              font-weight: 200;
+              font-size:11px;
+              text-decoration: none;
+              margin-right:10px;
+              color:@color-light-gray;
+              .transition-attr(color,0.2s,ease-in);
+
+              i{
+                padding-right: 3px;
+              }
+
+              &:hover{
+                color:white;
+                .transition-attr(color,0.2s,ease-out);
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  /* orbit time*/
+  .current-orbit-time {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+  }
+
+  /* right time labels*/
+  .time-labels {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 0px;
+    width: 0px;
+    .time-label {
+      position: absolute;
+      left: 0;
+      font-size: 11px;
+      width: 40px;
+    }
+
+  }
+  .controls {
+    position: absolute;
+    top: 55px;
+    right: 315px;
+    text-align: center;
+    .fis-button {
+      margin-bottom: 2px;
+    }
+  }
+
+}

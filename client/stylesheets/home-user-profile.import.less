@@ -1,0 +1,112 @@
+@import "variables.import.less";
+
+.fis-user-profile {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+
+  .user-profile {
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 45px;
+    padding:2px;
+
+    .transition-attr(border,500ms,ease-out);
+
+    &:hover {
+      cursor: pointer;
+    }
+    &.user-image {
+      background-clip: content-box;
+      background-size: 82px;
+      background-repeat: no-repeat;
+    }
+    &.guest-image {
+      font-size: 24px;
+      line-height: 80px;
+      text-align: center;
+      &.highlight-star{
+        border-color:transparent;
+      }
+      .guest-circle{
+        position: absolute;
+        left: 2px;
+        width: 78px;
+        height: 78px;
+        border: 1px solid white;
+        border-radius: 45px;
+        top: 2px;
+      }
+    }
+    &.on-orbit {
+      border-color: @color-yellow;
+      color: @color-yellow;
+    }
+    &.highlight-star {
+      border-color: white;
+    }
+  }
+  .user-data {
+    position: absolute;
+    left: 100px;
+    top:10px;
+    width: 350px;
+
+    .on-orbit-description{
+      font-size:10px;
+      font-family: Akkurat, monospace;
+      .help{
+        border: 1px solid;
+        border-radius: 11px;
+        width: 12px;
+        display: inline-block;
+        text-align: center;
+        line-height: 10px;
+        padding-top: 2px;
+        font-size: 9px;
+        .transition(0.2s, ease-out);
+        a, a:visited, a:hover, a:active {
+          color: inherit;
+          text-decoration: none;
+        }
+        &:hover {
+          cursor: pointer;
+          .transition(0.2s, ease-in);
+          color: @color-lighter-gray;
+          border-color: @color-lighter-gray;
+        }
+      }
+    }
+    .profile{
+      margin-top:10px;
+      margin-bottom: 10px;
+      .name {
+        text-decoration: none;
+        font-size: 15px;
+
+        color: white;
+        font-weight: bold;
+      }
+      .location {
+        font-size: 15px;
+        color: white;
+        &.not-detected{
+          font-size: 11px;
+          text-transform: uppercase;
+          width: 235px;
+        }
+      }
+    }
+
+
+    .profile-buttons{
+      .fis-button{
+        margin-right: 12px;
+      }
+    }
+  }
+
+}

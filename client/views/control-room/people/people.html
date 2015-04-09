@@ -1,0 +1,59 @@
+<template name="fisControlRoomPeople">
+    <div class="people-container">
+        <div class="title"> People <span class="filtered"> <span class="divisor">></span> {{peopleCount}} {{currentOrbit}}
+
+        </span>
+
+        </div>
+        <div id="control-room-people-list" class="people-list">
+            <div class="list">
+                {{#each people}}
+                    {{> fisPersonItem}}
+                {{/each}}
+                {{#if morePeople}}
+                    <div class="progress">...loading more people...</div>
+                {{/if}}
+                {{#if zeroPeople}}
+                    <div class="progress">..no one was on this orbit with you...</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="fisPersonItem">
+
+    <div class="person">
+
+        <div class="profile-image {{profileOnOrbit}}" style="background-image:{{profileImage}}"></div>
+
+        <div class="profile-desc">
+            <div class="desc">
+                <span class="user-name">{{profile.name}}</span> <span class="location"></span>
+            </div>
+            <div class="stats">
+                <span class="orbits">{{orbitsWithSam}} with sam</span> / <span class="friends">{{profileFriends}} in space</span>
+            </div>
+            {{#if hasTwitterAccount profile}}
+                <div class="other-actions">
+                    <span>Other actions: </span><a href="{{tweetToUser profile.twitterScreenName}}" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="link">Tweet</a> <a href="{{profile.profileLink}}" target="_blank" class="link">Twitter
+                    profile</a>
+                </div>
+            {{/if}}
+            {{#if hasGooglePlusAccount profile}}
+                <div class="other-actions">
+                    <span>Other actions: </span><a href="{{profile.profileLink}}" target="_blank" class="link">Google+ profile</a>
+                </div>
+            {{/if}}
+            {{#if hasFacebookAccount profile}}
+                <div class="other-actions">
+                    <span>Other actions: </span><a href="{{profile.profileLink}}" target="_blank" class="link">Facebook profile</a>
+                </div>
+            {{/if}}
+        </div>
+        <div class="profile-action"><span>SEE ACTIVITY -></span></div>
+
+    </div>
+</template>

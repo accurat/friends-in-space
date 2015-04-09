@@ -1,0 +1,120 @@
+@import "mixin-elements.import.less";
+
+.home-container {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+.fis-logo{
+  width: 100%;
+  position: absolute;
+  top: 24px;
+  text-align: center;
+  img{
+    width: 185px;
+    margin-right:45px;
+  }
+  .fis-disclaimer{
+    position:relative;
+    margin-top: -5px;
+    font-size:10px;
+    color:@color-light-gray;
+    .transition-attr(color,0.2s,ease-in);
+    &:hover{
+      cursor:pointer;
+      .transition-attr(color,0.2s,ease-out);
+      color:white;
+    }
+  }
+
+}
+
+.now-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: transparent;
+  //start always hidden
+  display: none;
+  span {
+    padding-left: 15px;
+    line-height: 40px;
+    &:hover {
+      color: lighten(@color-light-gray, 20%);
+      cursor: pointer;
+    }
+  }
+  .nav-controls {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    .control {
+      font-size: 12px;
+      border: 1px solid @color-light-gray;
+      padding: 2px 5px 2px;
+    }
+  }
+
+  &.top {
+    top: 0;
+    border-bottom:1px solid black;
+  }
+  &.bottom {
+    bottom: 0;
+    border-top:1px solid black;
+  }
+}
+
+//top container only for future!
+
+.view-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: @color-black;
+  overflow: hidden;
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  .bar-title {
+
+    span {
+      padding-left: 15px;
+      line-height: 40px;
+      .transition-attr(color, 0.2s, ease-out);
+
+      &:hover {
+        .transition-attr(color, 0.2s, ease-in);
+        color: lighten(white, 20%);
+        cursor: pointer;
+      }
+    }
+
+  }
+  .share-actions {
+    position:absolute;
+    right:25px;
+    top:13px;
+    .accurat{
+      font-size:12px;
+      text-decoration: none;
+    }
+    a{
+      padding-left: 15px;
+      color:@color-light-gray;
+      .transition-attr(color,0.2s,ease-in);
+      &:hover{
+        .transition-attr(color,0.2s,ease-out);
+        color:white;
+      }
+    }
+
+  }
+}

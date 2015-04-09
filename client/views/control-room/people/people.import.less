@@ -1,0 +1,172 @@
+.people-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 48%;
+  .title {
+    color: white;
+    font-size: 15px;
+    .filtered {
+      font-size: 13px;
+      color: @color-light-gray;
+      margin-right: 34px;
+      padding-left:5px;
+    }
+    .divisor{
+      font-size:16px;
+      padding:0 10px 0px 5px;
+
+    }
+    .fis-button {
+      background-color: @color-dark-gray;
+      border-color: transparent;
+      margin-right: 10px;
+    }
+  }
+
+  .people-list {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    overflow:hidden;
+    .list{
+      padding-bottom: 50px;
+      padding-right: 15px;
+    }
+
+    .progress{
+      width:98%;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color:white;
+      font-family: Akkurat, monospace;
+      font-size:12px;
+    }
+
+    .person {
+      &:last-child{
+        border-bottom: 1px solid @color-dark-gray;
+      }
+
+      position: relative;
+      border-top: 1px solid @color-dark-gray;
+      border-left: 1px solid @color-dark-gray;
+      border-right: 1px solid @color-dark-gray;
+      width: 98%;
+      height: 72px;
+      .transition-attr(background-color, 0.2s, ease-in);
+      &:hover {
+        .transition-attr(background-color, 0.2s, ease-out);
+        background-color: @color-dark-gray;
+        .profile-desc .other-actions{
+          .transition-attr(opacity, 0.2s, ease-out);
+          opacity:1;
+          visibility: visible;
+        }
+      }
+
+      .profile-image {
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: 37px;
+        height: 37px;
+        padding: 2px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        background-clip: content-box;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        &.on-orbit {
+          border-color: @color-yellow;
+        }
+      }
+      .profile-desc {
+        position: absolute;
+        left: 57px;
+        right: 15px;
+        top: 10px;
+
+        .desc {
+          font-size: 13px;
+          margin-bottom: 10px;
+          .user-name {
+            color: white;
+          }
+          .location {
+            color: @color-light-gray;
+          }
+        }
+        .stats {
+          font-family: Akkurat, monospace;
+          font-size: 10px;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          .orbits {
+            color: @color-yellow;
+          }
+          .friends {
+            color: @color-activities-1;
+          }
+        }
+        .other-actions {
+          .transition-attr(opacity, 0.2s, ease-in);
+          opacity:0;
+          visibility: hidden;
+          color: @color-light-gray;
+          font-size: 10px;
+          span{
+            padding-right:10px;
+          }
+          a{
+            padding-right:10px;
+          }
+          .link {
+            color: @color-light-gray;
+            &:focus,&:active,&:visited{
+              color: @color-light-gray;
+            }
+            .transition-attr(color, 0.2s, ease-in);
+            text-decoration: underline;
+            &:hover {
+              .transition-attr(color, 0.2s, ease-out);
+              cursor:pointer;
+              color: white;
+            }
+          }
+
+        }
+      }
+
+      .profile-action {
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        font-size: 10px;
+        color: @color-light-gray;
+        text-align: right;
+        cursor:pointer;
+
+        .transition-attr(color, 0.2s, ease-in);
+        &:hover {
+          span{
+            display:none;
+          }
+          cursor: pointer;
+          .transition-attr(color, 0.2s, ease-out);
+          color: white;
+          &:before{
+            content:"Available Soon!";
+          }
+        }
+      }
+
+    }
+
+  }
+}

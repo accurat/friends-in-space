@@ -1,0 +1,42 @@
+<template name="fisLoginModal">
+
+    {{#if notLogged}}
+        <div class="fis-login-modal-bg">
+
+            <div class="modal">
+                <div class="login-modal">
+
+                    <div class="title">
+                        You can log in with your twitter account and share your geo-location to meet new Friends in Space!
+                    </div>
+
+                    <div class="twitter-login">
+                    <span class="fis-button" id="login-twitter">
+                        <i class="fa fa-twitter"></i> Log in with Twitter
+                    </span>
+                    </div>
+                    <div class="no-twitter-desc">
+                        (Don't have Twitter? Log in with Facebook or Google+!)
+                    </div>
+                    <div class="other-login">
+                <span class="fis-button" id="login-facebook">
+                    <i class="fa fa-facebook"></i> Log in with Facebook
+                </span>
+                 <span class="fis-button" id="login-google">
+                    <i class="fa fa-google-plus"></i> Log in with Google+
+                </span>
+                    </div>
+
+                    <div class="no-login">
+                        Don't want your Friends in Space to reach out to you?<br/>
+                        <span class="no-login-enter" id="login-guest">Proceed without registration.</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    {{/if}}
+</template>

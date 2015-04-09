@@ -1,0 +1,19 @@
+<template name="fisControlRoomProfile">
+    <div class="profile">
+        <div class="title">Control room</div>
+        <div class="map"></div>
+        <div class="map-top-gradient"></div>
+        <div class="map-right-gradient"></div>
+        <div class="map-center"></div>
+        <div class="user">
+            <div class="user-profile user-image {{ onOrbit }}" style="background-image:{{ userProfileImage }}"></div>
+            <div class="user-name">{{userName}}</div>
+            <div class="user-location">{{userLocation}}</div>
+        </div>
+
+        <div class="stats">
+            <div class="orbit">{{userOrbits}} with SAM</div>
+            <div class="friends">{{userFriends}} in space</div>
+        </div>
+    </div>
+</template>

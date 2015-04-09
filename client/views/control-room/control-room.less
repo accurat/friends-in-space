@@ -1,0 +1,28 @@
+@import "../../stylesheets/variables.import.less";
+@import "../../stylesheets/mixin-elements.import.less";
+
+
+.control-room-container {
+  position: absolute;
+  top:15px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+
+  @import "profile/profile.import.less";
+
+  .scroll-container {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    right: 0;
+    width: 80%;
+
+    @import "orbits/orbits.import.less";
+
+    @import "people/people.import.less";
+
+    @import "timeline/timeline.import.less";
+
+  }
+}

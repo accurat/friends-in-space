@@ -1,0 +1,240 @@
+.fis-about {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  left: 0;
+  background-color: #1a1a1a;
+  color:white;
+  .section {
+    display: block;
+    text-align: center;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  #section-header {
+
+
+    height: 700px;
+    background-image: url('assets/images/about/img-header.jpg');
+
+    .title {
+      padding-top: 120px;
+    }
+
+    .description {
+      padding-top: 30px;
+      font-size: 22px;
+      line-height: 36px;
+    }
+
+    .notice {
+      padding-top: 50px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-size: 22px;
+      padding-bottom: 50px;
+    }
+
+    .credits {
+      font-size: 15px;
+      line-height: 18px;
+
+      a.link {
+        color: white;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        .transition-attr(border-color,0.2s, ease-in);
+
+        &:hover {
+          border-color:white;
+          .transition-attr(border-color,0.2s, ease-out);
+        }
+      }
+
+    }
+
+    .credits-link {
+
+      span {
+        font-size: 15px;
+        color: #879299;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        .transition-attr(border-color,0.2s, ease-in);
+
+        &:hover {
+          cursor:pointer;
+          border-color:#879299;
+          .transition-attr(border-color,0.2s, ease-out);
+        }
+
+      }
+    }
+  }
+
+  #section-01 {
+    height: 961px;
+    background-image: url('assets/images/about/img-section-01.png')
+  }
+
+  #section-02 {
+    font-size:22px;
+    .title {
+      font-weight: bold;
+      padding-bottom: 80px;
+    }
+
+    .description {
+
+      line-height: 26px;
+      text-align: left;
+      display: inline-block;
+      padding-bottom: 100px;
+
+      table > tbody > tr > td {
+        color: #879299;
+
+        .highlight {
+          color: white;
+        }
+      }
+
+      .col-left {
+        padding-right: 30px;
+        //color: #879299;
+      }
+
+      .col-right {
+        padding-left: 10px;
+        //color: #879299;
+      }
+
+    }
+
+  }
+
+  #section-03 {
+    height: 646px;
+    background-image: url('assets/images/about/img-section-03.jpg')
+  }
+
+  #section-04 {
+    height: 1336px;
+    background-image: url('assets/images/about/img-section-04.jpg')
+  }
+
+  #section-05 {
+    height: 1193px;
+    background-image: url('assets/images/about/img-section-05.jpg')
+  }
+
+  #section-06 {
+    height: 330px;
+    background-image: url('assets/images/about/img-section-06.jpg')
+  }
+
+  #section-07 {
+    height: 625px;
+    background-image: url('assets/images/about/img-section-07.jpg')
+  }
+
+  #section-08 {
+    height: 863px;
+    background-image: url('assets/images/about/img-section-08.jpg')
+  }
+
+  #section-09 {
+    height: 1130px;
+    background-image: url('assets/images/about/img-section-09.jpg')
+  }
+
+  #section-10 {
+    height: 976px;
+    background-image: url('assets/images/about/img-section-10.jpg')
+  }
+
+  #section-footer {
+    border-top: 1px solid #666666;
+    color: #879299;
+    font-size: 13px;
+
+    .footer-row-01 {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-size: 18px;
+      color: white;
+    }
+
+    .footer-row-02 {
+      padding-top: 50px;
+      padding-bottom: 25px;
+      line-height: 20px;
+    }
+
+    .footer-row-03 {
+      padding-bottom: 50px;
+    }
+
+    .footer-row-04 {
+      padding-bottom: 150px;
+    }
+
+    .footer-col-left {
+      width: 150px;
+      display: inline-block;
+      vertical-align: top;
+      img{
+        cursor:pointer;
+        opacity: 0.6;
+        .transition-attr(opacity,0.2s, ease-in);
+        &:hover {
+          opacity: 1;
+          .transition-attr(opacity,0.2s, ease-out);
+        }
+      }
+    }
+
+    .footer-col-right {
+      width: 600px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+
+      a {
+        color: white;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        .transition-attr(border-color,0.2s, ease-in);
+
+        &:hover {
+          border-color:white;
+          .transition-attr(border-color,0.2s, ease-out);
+        }
+
+      }
+
+      .boxed {
+        color: white;
+        border: 1px solid white;
+        padding: 5px;
+        opacity: 0.6;
+        .transition-attr(opacity,0.2s, ease-in);
+        a{
+          border:none;
+        }
+        &:hover {
+          opacity: 1;
+          cursor:pointer;
+          .transition-attr(opacity,0.2s, ease-out);
+        }
+      }
+
+    }
+
+  }
+
+}
+

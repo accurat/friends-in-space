@@ -1,0 +1,124 @@
+@import "mixin-elements.import.less";
+@import "variables.import.less";
+
+.fis-legend{
+  position:absolute;
+  right:20px;
+  height: 100%;
+  display: table;
+  .fis-legend-container{
+  display:table-cell;;
+    vertical-align: middle;
+  }
+  .legend-text{
+    visibility:hidden;
+    opacity: 0;
+    position: absolute;
+    right: 30px;
+    text-align: right;
+    background-color: black;
+    color:@color-light-gray;
+    padding: 4px 7px;
+    font-size: 10px;
+    line-height: 10px;
+    margin-top:6px;
+    font-family: Akkurat, monospace;
+    white-space: nowrap;
+    .transition-attr(opacity,0.2s, ease-out);
+  }
+  .stars{
+    width:20px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 21px;
+    cursor:pointer;
+    .star{
+      text-align: center;
+      color:@color-light-gray;
+      .transition-attr(color,0.2s, ease-out);
+
+
+      &:hover{
+        .transition-attr(color,0.2s, ease-in);
+        color: lighten(@color-light-gray, 60%);
+
+        .legend-text{
+          .transition-attr(opacity,0.2s, ease-in);
+          opacity: 1;
+          visibility:visible;
+        }
+      }
+    }
+  }
+  .colors {
+    position: relative;
+    height: 40px;
+    margin-top: 11px;
+    padding-bottom: 5px;
+    width: 10px;
+    padding-left: 7px;
+
+    .color{
+      position:absolute;
+      height:7px;
+
+      &:nth-child(1){
+        top:0;
+      }
+      &:nth-child(2){
+        top:7px;
+      }
+      &:nth-child(3){
+        top:14px;
+      }
+      &:nth-child(4){
+        top:21px;
+      }
+      &:nth-child(5){
+        top:28px;
+      }
+
+      &:hover{
+        cursor:pointer;
+        .legend-text{
+          .transition-attr(opacity,0.2s, ease-in);
+          opacity: 1;
+          visibility:visible;
+        }
+      }
+
+      .legend-text{
+        margin-top:-6px;
+        right: 17px;
+      }
+      .cube{
+        position: absolute;
+        display: inline-block;
+        width:5px;
+        height:5px;
+
+        &.color-1{
+          background-color: @color-activities-1;
+        }
+        &.color-2{
+          background-color: @color-activities-2;
+        }
+        &.color-3{
+          background-color: @color-activities-3;
+        }
+        &.color-4{
+          background-color: @color-activities-4;
+        }
+        &.color-5{
+          background-color: @color-activities-5;
+        }
+      }
+    }
+  }
+  .on-orbit-color {
+    .color-orbit {
+      background-color: @color-yellow;
+    }
+  }
+}

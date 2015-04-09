@@ -1,0 +1,35 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+service-configuration
+u2622:persistent-session
+jbrousseau:meteor-collection-behaviours
+mrt:moment
+less
+underscore
+jquery
+d3
+natestrauser:font-awesome
+accounts-ui
+accounts-password
+accounts-twitter
+accounts-facebook
+accounts-google
+fis
+fis-log
+fis-activities
+fis-iss
+fis-online-map
+fis-future-past-map
+percolate:google-api
+mrt:chance
+fis-fake-data
+fis-save-images
+fis-sam-feeds
+fis-twitter-text
+perfect-scrollbar
+modulus-operations
+

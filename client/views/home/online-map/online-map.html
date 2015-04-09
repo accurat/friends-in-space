@@ -1,0 +1,14 @@
+<template name="fisOnlineMap">
+    <div id="fis-online-map"></div>
+    <!--<div id="fis-online-map-top-gradient"></div>-->
+    <!--<div id="fis-online-map-bottom-gradient"></div>-->
+    <div class="fis-online-map-controls">
+        <div class="fis-button" id="fis-reset-zoom" title="Reset the Map Zoom">RESET ZOOM</div>
+        {{#if mapShown}}
+            <div class="fis-button" id="fis-hide-map" title="Hide the background map">HIDE MAP</div>
+        {{else}}
+            <div class="fis-button" id="fis-show-map" title="Show the background map">SHOW MAP</div>
+        {{/if}}
+    </div>
+
+</template>

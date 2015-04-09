@@ -1,0 +1,45 @@
+.fis-greeting-controls {
+  position: absolute;
+  bottom: 23px;
+  left: 350px;
+  right: 350px;
+  text-align: center;
+  font-family: "Akkurat, monospace";
+  .controls {
+    display: inline-block;
+    width: 292px;
+    font-size:11px;
+    .underline{
+      text-decoration: underline;
+    }
+    .control {
+      display: inline-block;
+      width: 130px;
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 5px;
+      cursor: pointer;
+      .transition(0.2s, ease-out);
+      &.world{
+
+        border-color:@color-activities-1;
+        color:@color-activities-1;
+        &:hover{
+          color:black;
+          .transition(0.2s, ease-in);
+          background-color:@color-activities-1;
+        }
+      }
+      &.sam{
+        color:@color-yellow;
+        border-color:@color-yellow;
+        &:hover{
+          color:black;
+          .transition(0.2s, ease-in);
+          background-color:@color-yellow;
+        }
+      }
+    }
+  }
+
+}

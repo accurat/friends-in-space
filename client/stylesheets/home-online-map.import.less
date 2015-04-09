@@ -1,0 +1,204 @@
+#fis-online-map {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  .fis-online-map-zoom {
+    display: none;
+    position: absolute;
+    left: 95px;
+    top: 27px;
+    button {
+      span[role="tooltip"] {
+        display: none;
+      }
+      background-color: transparent;
+      color: @color-light-gray;
+      margin-right: 10px;
+      font-size: 14px;
+      font-family: Akkurat, monospace;
+      border: 1px solid @color-light-gray;
+      .transition(0.2s, ease-out);
+      outline: 0 !important;
+      &:hover {
+        cursor: pointer;
+        .transition(0.2s, ease-in);
+        color: @color-lighter-gray;
+        border-color: @color-lighter-gray;
+        i {
+          .transition(0.2s, ease-in);
+          color: @color-lighter-gray;
+        }
+      }
+    }
+  }
+}
+
+#fis-online-map-bottom-gradient {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:115px;
+  background: rgba(255,255,255,0.04);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.04)), color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(20,20,20,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#141414', GradientType=0 );
+}
+#fis-online-map-top-gradient {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:100px;
+
+  background: rgba(20,20,20,0.79);
+  background: -moz-linear-gradient(top, rgba(20,20,20,0.79) 0%, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(20,20,20,0.79)), color-stop(0%, rgba(20,20,20,1)), color-stop(100%, rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(top, rgba(20,20,20,0.79) 0%, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(top, rgba(20,20,20,0.79) 0%, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+  background: -ms-linear-gradient(top, rgba(20,20,20,0.79) 0%, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(20,20,20,0.79) 0%, rgba(20,20,20,1) 0%, rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141414', endColorstr='#ffffff', GradientType=0 );
+}
+
+.fis-online-map-controls {
+  position: absolute;
+  top: 47px;
+  left: 15px;
+  .fis-button {
+    text-align: center;
+    display: inline-block;
+    margin-right: 8px;
+  }
+}
+
+/*popup for cluster*/
+.cluster-marker-popup {
+  position: absolute;
+  background-color: black;
+  width: 220px;
+  height: 12px;
+  bottom: 15px;
+  right: -110px;
+  font-size: 13px;
+  padding: 5px;
+  line-height: 13px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  .text {
+    color: white;
+  }
+
+}
+
+/*popup for single cluster*/
+.single-marker-popup {
+
+  position: absolute;
+  background-color: black;
+  width: 300px;
+  bottom: 10px;
+  right: -150px;
+  font-size: 13px;
+  line-height: 18px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  .transition(0.4s, ease-in);
+  &.guest-popup {
+    width: 220px;
+    right: -110px;
+    height: 12px;
+    top: -55px;
+    text-align: center;
+    .image {
+      display: none;
+    }
+    .statistics {
+      display: none
+    }
+  }
+
+  .image {
+    position: relative;
+    float: left;
+    display: inline-block;
+    background-image: url("http://placehold.it/50x50/3BC4A2/ffffff&text=USER");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 3px;
+    margin-right: 8px;
+  }
+
+  .user-name {
+    color: white;
+  }
+  .statistics {
+    font-size: 10px;
+    .sam-orbits {
+      color: #FFFF00;
+    }
+    .connected-people {
+      color: #08AD80;
+    }
+  }
+
+  .not-logged-in-notice{
+    display:none;
+    font-size: 10px;
+    padding-left: 42px;
+    padding-top: 1px;
+  }
+  .actions {
+
+    font-size: 10px;
+    padding-left: 42px;
+    padding-top: 1px;
+
+    .popup-action {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+
+
+    a {
+
+      &.user-interactions{
+        display: inline-block;
+        white-space: nowrap;
+        width: 70px;
+        cursor:pointer;
+        &:hover{
+
+          span{
+            display:none;
+          }
+          &:before{
+            content:"Available Soon!";
+          }
+        }
+      }
+
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      .transition-attr(color, 0.2s, ease-in);
+      &:hover {
+        .transition-attr(color, 0.2s, ease-out);
+        color: white;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,115 @@
+@import "variables.import.less";
+.fis-sam-distance{
+  position:absolute;
+  bottom:80px;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  right:0;
+  width:300px;
+
+  .remaining-text{
+    position:absolute;
+    top:-20px;
+    font-size:10px;
+    font-weight: 100;
+    width:300px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Akkurat, monospace;
+  }
+  .path-dash{
+    position:absolute;
+    top:0;
+    left:0;
+    width:300px;
+    border-top:1px dashed @color-yellow;
+  }
+  .current-path{
+    position:absolute;
+    top:-1px;
+    left:0;
+    width:200px;
+    height:3px;
+    background-color: @color-yellow;
+    border-radius: 3px;
+  }
+  .sam-position{
+    position:absolute;
+    top:-4px;
+    left:0;
+    width:5px;
+    height:5px;
+    border-radius: 5px;
+    background-color: white;
+    border:2px solid black;
+  }
+  .your-position{
+    position:absolute;
+    top:-4px;
+    left:0;
+    width:5px;
+    height:5px;
+    border-radius: 5px;
+    background-color: white;
+    border:2px solid black;
+  }
+
+  .notification-text{
+    position:absolute;
+    top:-20px;
+    font-size:13px;
+    width:300px;
+    text-transform: uppercase;
+    font-family: Akkurat, monospace;
+
+    color:#d4145a;
+  }
+
+}
+
+.marquee {
+  width: 300px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;  /* show the marquee just outside the paragraph */
+  animation: marquee 10s linear infinite;
+  -webkit-animation: marquee 10s linear infinite;
+  -moz-animation: marquee 10s linear infinite;
+}
+
+
+
+.marquee span:hover {
+  animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+  0%   {
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+  }
+}
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+    -webkit-transform: translate(-100%, 0);
+  }
+}
